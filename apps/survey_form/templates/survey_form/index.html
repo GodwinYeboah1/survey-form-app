@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+            <div class="form-layout">
+                <form action="/process" method="post">
+                    {% csrf_token %} 
+                    <label for=""> Your Name:
+                        <input type="text" name="fullname" id="">
+                    </label>
+                    <label for="Locations"> Dojo Locations:
+                        <select name="Locations">
+                            <option value="volvo">Mountain Vivew</option>
+                            <option value="Sealte">Sealte</option>
+                            <option value="La">LA</option>
+                            <option value="Dallas">Dallas</option>
+                            <option value="Arlington">Arlington</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="Tulsa">Tulsa</option>
+                            <option value="Oakland">Oakland</option>
+                            <option value="Boise">Boise</option>
+                            <option value="OC">OC</option>
+                            <option value="Oline">Online</option>
+                        </select>
+                    </label>
+                    <label for="Favorite Language">Favorite Language :
+                            <select name="fav_lang">
+                                <option value="Javascript">Javascript</option>
+                                <option value="Java">Java</option>
+                                <option value="C++">C++</option>
+                                <option value="C#">C#</option>
+                                <option value="Python">Python</option>
+                                <option value="Go">Go</option>
+                                <option value="PHP">PHP</option>
+                            </select>
+                    </label>
+                    <label for=""> Comment (optional):
+                        <textarea name="comment" id="" cols="30" rows=""></textarea>
+                    </label>       
+                    <input type="submit" value="submit">
+                </form>
+        </div>
+    </div>
+</body>
+</html>
